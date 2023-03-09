@@ -1,6 +1,9 @@
-#include "includes.h"
+#include "includes.h" // import des bibliotheques grace au fichier includes.h
 
-int main(int argc, char **argv) {
+int main(int argc, char **argv) { // fonction principal
+    /*
+    initialisation des variables
+    */
     char buf[91];
     int **board;
     int *ret;
@@ -10,13 +13,15 @@ int main(int argc, char **argv) {
     int n = 0;
 
 
-    board = (int **)malloc(sizeof(int *)*9);
+    board = (int **)malloc(sizeof(int *)*9);//atribut de place pour le tableau
 
     while(i < 9){
         board[i] = (int *)malloc(sizeof(int)*9);
         i++;
     }
-    
+    /*
+    ouvrire et lire le fichier texte 
+    */
     int fd = open(argv[1], O_RDONLY);
     int nb_read = read(fd,buf, 90);
 
@@ -27,6 +32,9 @@ int main(int argc, char **argv) {
     buf[90]= '\0';
     close(fd);
 
+    /*
+    stockage des valeur dans le tableau
+    */
     while(buf[j] != '\0') {
         board[n][m] = buf[j]-48;
         if(buf[j] == '\n') {
@@ -39,6 +47,10 @@ int main(int argc, char **argv) {
             
         }
     }
+
+    /*
+    affichage des valeurs
+    */
 
     n = 0;
     m = 0;
@@ -54,7 +66,9 @@ int main(int argc, char **argv) {
     }
 
     
-
+    /*
+    liberer la place pour pas faire crash un pc
+    */
     i = 0;
     while(i < 9) {
         free(board[i]);
