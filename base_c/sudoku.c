@@ -1,6 +1,6 @@
 #include "includes.h"
 
-int main(int argc, char **argv){
+int main(int argc, char **argv) {
     char buf[91];
     int **board;
     int *ret;
@@ -8,7 +8,7 @@ int main(int argc, char **argv){
     int j = 0;
     int m = 0;
     int n = 0;
-    int free_case = 0;
+
 
     board = (int **)malloc(sizeof(int *)*9);
 
@@ -29,9 +29,6 @@ int main(int argc, char **argv){
 
     while(buf[j] != '\0') {
         board[n][m] = buf[j]-48;
-        //if(board[n][m] != '0') {
-        //   free_case ++;
-        }
         if(buf[j] == '\n') {
             m = 0;
             n++;
@@ -42,7 +39,6 @@ int main(int argc, char **argv){
             
         }
     }
-    //printf("%i\n",free_case);
 
     n = 0;
     m = 0;
