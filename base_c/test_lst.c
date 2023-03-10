@@ -1,24 +1,11 @@
 #include "includes.h"
-//utilisiation de quicksort
-//création de 5 structure(pointeur sur structur)
+
 
 int cmpfunc (const void * a, const void * b) {
    return ( *(int*)a - *(int*)b );
 }
 
 
-
-/*
-*type_lst fonction(*type_lst, *type_lst)
-
-    lst->nb=1
-    lst->next=NULL
-
-    lst2->nb = 2
-    lst->next=Null
-
-    lst->next=lst2
-*/
 
 int main(void){
     int array_int[5] = { 5, 6, 4, 2, 1};
